@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; display: flex;">
+        <h1 style="display: flex; padding: 2em; margin: 1em;">
+            <a href="{% url 'HOME' %}">
+                Home 
+            </a>
+        </h1>
+        <h1 style="display: flex; padding: 2em; margin: 1em;">
+            
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'LOGOUT' %}">
+                    Logout
+                </a>
+            {% else %}
+                <a href="{% url 'LOGIN' %}">
+                    Login 
+                </a>
+            {% endif %}
+                
+        </h1>
+    </h1>
+</body>
+</html>
